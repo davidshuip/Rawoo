@@ -27,12 +27,14 @@
           <h3>
           <p>
 
-           //API.AI code
             <input id="test-client-query-input" type="text" spellcheck="false" class="form-control ng-pristine ng-valid ng-isolate-scope md-input ng-empty ui-autocomplete-input ng-touched" placeholder="Try it now..." ng-model="query" ng-keypress="speak(query, $event) &amp;&amp; (speakResult=true) &amp;&amp; (query = '');" focus-on="true" aria-label="Try it now..." aria-invalid="false" style="">
             <md-icon class="mic-ico material-icons" ng-click="speakButton()" ng-class="{'speak':recognizing}" ng-show="isWebkitSpeechRecognitionSupport" role="button" tabindex="0" aria-hidden="false" style="">
-            <span class="flaticon stroke microphone"></span>
-            <span class="mic-ico ng-empty ng-valid ng-hide" ng-click="toggleListening()" ng-class="{speak:isRecognizing}" title="Start" microphone="microphoneConfig" ng-model="query" ng-hide="isWebkitSpeechRecognitionSupport" role="button" tabindex="0" aria-hidden="true" aria-invalid="false">   <span class="flaticon stroke microphone" ng-class="{'microphone':!isDisabled,'microphone-2':isDisabled}"></span></span>
-                    </md-icon>
+              <span class="flaticon stroke microphone"></span>
+              <span class="mic-ico ng-empty ng-valid ng-hide" ng-click="toggleListening()" ng-class="{speak:isRecognizing}" title="Start" microphone="microphoneConfig" ng-model="query" ng-hide="isWebkitSpeechRecognitionSupport" role="button" tabindex="0" aria-hidden="true" aria-invalid="false">
+                <span class="flaticon stroke microphone" ng-class="{'microphone':!isDisabled,'microphone-2':isDisabled}">
+                </span>
+              </span>
+            </md-icon>
           </p>
           
           <input id="q" aria-hidden="true" autocomplete="off" name="q" tabindex="-1" type="url" jsaction="mousedown:ntp.fkbxclk" style="opacity: 0;">
