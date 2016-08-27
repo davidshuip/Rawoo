@@ -1,0 +1,139 @@
+<!DOCTYPE html">
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+	   Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>mobile site</title>
+  <meta name="description" content="" />
+  <meta name="author" content="bob gifford" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <link  rel="stylesheet" href="css/style.css" />
+  
+
+  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+
+<body>
+<div id="window">
+  <div id="mainMenu">
+  	<h3>main menu</h3>
+  	<ul id="explore">
+  		<li><a href="home.html">HOME</a></li>
+  		<li><a class="currentTab" href="mind.html">MIND</a></li>
+  		<li><a href="body.html">BODY</a></li>
+  		<li><a href="soul.html">SOUL</a></li>
+  		<li><a>EXPLORE</a></li>
+  		<li><a>CHALLENGES</a></li>
+  		<li><a>PERKS</a></li>
+  		<li><a>LOG OUT</a></li>
+  	</ul>
+  </div>
+	<div class="container menuClosed profileClosed">
+		<div id="header">
+			<a href="home.html"><img id="lbLogo"src="images/briggs-logo.png" width="160"/></a>
+		
+		<div id="navOptions">
+			<ul id="nav">
+				<li><a id="menuIcon"><img  src="images/menu-icon.jpg" width="60"/></a></li>
+				<li><a id="profileIcon"><img  src="images/profile-icon.jpg" width="60"/></a></li>
+			</ul>
+		</div><!--end main Nav-->
+		<div class="clear"></div>
+		<div id="pageBox" class="statBox">
+			<h4>MIND</h4>
+			<h4 class="pointsR">5 <span> points</span></h4>
+			
+		</div><!--end home box-->
+	  </div><!--end header-->
+
+		<div id="mainContent">
+			<div class="pageTips">
+			  <div class="tipsInner">
+				<p>Keep your mind sharp = gain rewards</p>
+			  </div>
+			</div>
+			<ul class="innerPagelist">
+				<a class="PageBtn"><li><p class="redTitle"><span>Lance Trivia</span></p><h5>(+6)</h5><img class="floatR" src="images/white-arrow.png" height="20"/></li></a>
+				<a class="PageBtn"><li><p class="redTitle"><span>Bubo Myself</span></p><h5>(+3)</h5><img class="floatR" src="images/white-arrow.png" height="20"/></li></a>
+				<a class="PageBtn"><li><p class="redTitle"><span>Quiz for Health</span></p><h5>(+8)</h5><img class="floatR" src="images/white-arrow.png" height="20"/></li></a>
+			</ul>
+		</div><!--end main content-->
+		<div id="Footer">
+			<img src="images/seraph.jpg" height="40"/>
+			<p>improve your <strong>Seraph</strong> score</p>
+			
+		</div><!--end footer-->
+	</div><!--end container-->
+	<div id="profileMenu">
+		<div id="Progress">
+			<p>my profile: 10% complete</p>
+			<img src="images/status-bar.png" width="212"/>
+		</div>
+		<div id="bio">
+			<img src="images/avatar.png" width="60"/>
+			<p>Status: <span> "Newbie"</span></p>
+			<p>Location: <span> "Unknown"</span></p>
+			<p>Seraph Points: <span> "15"</span></p>
+			<div class="clear"></div>
+			<div id="writeUp"><p>Bio:</p></div>
+		</div>
+		<div class="clear"></div>
+		<div class="pageTips">
+		  <div class="todoList">
+			<p>Profile Completion Tips:</p>
+			<p><span>+ Confirm your location</span></p>
+			<p><span>+ Enter a personal bio</span></p>
+			<p><span>+ Login using Facebook connect</span></p>
+		  </div>
+		  
+		</div>
+		<ul id="personal">
+			<li><a>RECENT ACTIVITY</a></li>
+			<li><a>FRIENDS</a></li>
+			<li><a>ME vs. LANCE</a></li>
+		</ul>
+	</div><!--end profile-->
+  </div><!--end window-->
+  <script src="js/jquery-1.7.1.min.js" rel="text/javascript"></script>
+ <script src="js/fs-mobile.js" rel="text/javascript"></script>
+<script>	
+$('ul#nav li a#menuIcon').click(function() {
+	if($('div.container').hasClass("menuClosed")) {
+		$('div.container').animate({"margin-left": "240px"}, 200);
+		$('div.container').removeClass("menuClosed");
+		$('div.container').addClass("menuOpen");		
+	} else if ($('div.container').hasClass("menuOpen")) {
+		$('div.container').animate({"margin-left": "0px"}, 200);
+		$('div.container').removeClass("menuOpen");
+		$('div.container').addClass("menuClosed");	
+	}
+});	
+$('ul#nav li a#profileIcon').click(function() {
+	if($('div.container').hasClass("profileClosed")) {
+		$('div#mainMenu').hide();
+		$('div#profileMenu').animate({"width": "240px"}, 200);
+		$('div#profileMenu').animate({"margin-left": "25%"}, 1);
+		$('div.container').animate({"margin-left": "-240px"}, 200);
+		$('div.container').removeClass("profileClosed");
+		$('div.container').addClass("profileOpen");			
+	} else if ($('div.container').hasClass("profileOpen")) {
+		$('div.container').animate({"margin-left": "0px"}, 200);
+		$('div#profileMenu').animate({"margin-left": "100%"}, 200);
+		$('div#profileMenu').animate({"width": "0px"}, 200);
+		$('div.container').removeClass("profileOpen");
+		$('div.container').addClass("profileClosed");
+		$('div#mainMenu').show();	
+	}
+});	
+</script>
+
+
+</body>
+</html>
